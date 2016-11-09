@@ -1,8 +1,12 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "${var.region}"
 }
 
 resource "aws_instance" "example" {
-  ami           = "ami-b73b63a0"
-  instance_type = "t2.micro"
+  ami           = "${lookup(var.ami, var.region)}"
+  instance_type = "${var.instance_type}"
+
+  root_block_device {
+    delete_on_termination = "true"
+  }
 }
