@@ -3,7 +3,7 @@ remote_state = {
   config {
     encrypt = "true"
     bucket = "add-tf-state"
-    key = "add-example/terraform.tfstate"
+    key = "add-example/staging/terraform.tfstate"
     region = "us-east-1"
   }
 }

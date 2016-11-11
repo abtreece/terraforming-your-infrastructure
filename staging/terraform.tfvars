@@ -1,0 +1,5 @@
+connection_user = "ec2-user"
+region = "us-east-1"
+availability_zone = "us-east-1a"
+name = "web"
+environment = "staging"

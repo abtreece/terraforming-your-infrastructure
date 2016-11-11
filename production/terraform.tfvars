@@ -1,0 +1,5 @@
+connection_user = "ec2-user"
+region = "us-east-2"
+availability_zone = "us-east-2a"
+name = "web"
+environment = "production"
