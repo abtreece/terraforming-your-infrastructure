@@ -1,9 +1,9 @@
 resource "aws_instance" "web" {
-  ami           = "${lookup(var.ami, var.region)}"
-  count         = "${var.instance_count}"
-  instance_type = "${var.instance_type}"
-  availability_zone = "${var.availability_zone}"
-  key_name = "${var.key_name}"
+  ami                    = lookup(var.ami, var.region)
+  count                  = var.instance_count
+  instance_type          = var.instance_type
+  availability_zone      = var.availability_zone
+  key_name               = var.key_name
   vpc_security_group_ids = ["${var.web_security_groups}"]
 
   root_block_device {
@@ -23,8 +23,8 @@ resource "aws_instance" "web" {
   }
 
   connection {
-    user = "${var.connection_user}"
-    private_key = "${file("${var.public_key_path}")}"
+    user        = var.connection_user
+    private_key = file("${var.public_key_path}")
   }
 
 }
