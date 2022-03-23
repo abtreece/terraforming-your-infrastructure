@@ -1,6 +1,6 @@
 resource "aws_instance" "example" {
   count                  = var.instance_count
-  amin                   = lookup(var.ami, var.region)
+  ami                    = lookup(var.ami, var.region)
   instance_type          = var.instance_type
   availability_zone      = "us-east-1a"
   key_name               = var.key_name
